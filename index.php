@@ -27,13 +27,20 @@ $oauthUrl = $connection->url('oauth/authorize', array('oauth_token' => $request_
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-	  <title>login</title>
+  <meta charset="utf-8">
+	<title>login</title>
 	<meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="stylesheet.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 	</head>
 	<body>
-		<h1>フォロワーキーワード検索アプリ</h1>
-		<p>キーワードがプロフィール文に含まれているフォロワーを表示します。</p>
-		<p class="alc"><a href="<?php echo $oauthUrl; ?>" class="loginbtn lbt"><i class="fab fa-twitter"></i>Twitterでログイン</a></p>
+    <header>
+        <h1>フォロワーキーワード検索アプリ</h1>
+    </header>
+    <div class="container">
+      <p>検索したキーワードがプロフィールに含まれるフォロワー一覧を表示します</p>
+  		<a href="<?php echo $oauthUrl; ?>" ><div class="btn"><i class="fab fa-twitter"></i>Twitterでログイン</div></a>
+    </div>
   </body>
+  <footer><p>Copyright (C) 2020 Ryo. all rights reserved.</p></footer>
 </html>
