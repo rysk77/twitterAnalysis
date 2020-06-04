@@ -41,7 +41,8 @@ $sql = "CREATE TABLE $table_name (
         profile VARCHAR(200) ,
         friend INT(11),
         follower INT(11),
-        icon TEXT
+        icon TEXT,
+        url TEXT
 )";
 $pdo->query($sql);
 $pdo = null;
@@ -77,9 +78,10 @@ for($i=0; $i<count($followers); $i++){
   $friend  = $followers[$i]->{'friends_count'};
   $fan     = $followers[$i]->{'followers_count'};
   $icon    = $followers[$i]->{'profile_image_url'};
+  $url     = $followers[$i]->{'screen_name'};
   $stmt    = $pdo->prepare( "INSERT INTO $table_name(
-                            	name, profile, friend, follower, icon)
-                              VALUES ('$name', '$profile', '$friend', '$fan', '$icon')"
+                            	name, profile, friend, follower, icon, url)
+                              VALUES ('$name', '$profile', '$friend', '$fan', '$icon', '$url')"
                             );
   $stmt->execute();
 }
