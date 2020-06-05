@@ -26,7 +26,7 @@ $_SESSION['table_name'] = $table_name;
 
 
 //テーブルチェック
-$pdo = new PDO('mysql:host=localhost;dbname=followerAnalysis;charset=utf8mb4','aaa','aaa');
+$pdo = new PDO('pgsql:host=ec2-3-222-30-53.compute-1.amazonaws.com;dbname=dcq9mmhagf14md;charset=utf8','moeyszxjmvudsx','96786a380ccd8e1fc14824b34e77d4bb23193d42c740e8048902e554ee82e7d8');
 $sql = "select * from $table_name";
 $stmt = $pdo->query($sql);
 if($stmt != false){
@@ -68,7 +68,7 @@ do {
 } while ($params['cursor'] = $response->next_cursor_str);
 
 //DBにユーザー情報格納
-$pdo = new PDO('mysql:host=localhost;dbname=followerAnalysis;charset=utf8mb4','aaa','aaa');
+$pdo = new PDO('pgsql:host=ec2-3-222-30-53.compute-1.amazonaws.com;dbname=dcq9mmhagf14md;charset=utf8','moeyszxjmvudsx','96786a380ccd8e1fc14824b34e77d4bb23193d42c740e8048902e554ee82e7d8')
 $pdo->beginTransaction();
 for($i=0; $i<count($followers); $i++){
   $name    = $followers[$i]->{'name'};

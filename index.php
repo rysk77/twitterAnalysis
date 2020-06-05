@@ -10,7 +10,7 @@ $access_token = '1229996056600952834-8gloY3Zrs3CPpVJth2oI5xElxQ1U14';
 $access_token_secret = 'HdErux4o5IljBl2V7exoI9Zoa0PLQdXU1vhMm2C5m9PGs';
 
 //コールバックページのURL
-define('CALLBACK_URL', 'http://localhost/twitter/callback.php');
+define('CALLBACK_URL', 'https://follwerkeywordsearch.herokuapp.com/twitter/callback.php');
 
 
 //「abraham/twitteroauth」ライブラリのインスタンスを生成し、Twitterからリクエストトークンを取得する
