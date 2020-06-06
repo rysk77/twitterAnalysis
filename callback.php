@@ -35,11 +35,11 @@ if($stmt != false){
 print_r($pdo->errorInfo());
 //テーブルを作成　
 $sql = "CREATE TABLE \"$table_name\" (
-        id INT serial PRIMARY KEY,
+        id INT SERIAL PRIMARY KEY,
         name VARCHAR(50),
         profile VARCHAR(200) ,
-        friend INT(11),
-        follower INT(11),
+        friend INT,
+        follower INT,
         icon TEXT,
         url TEXT
 )";
