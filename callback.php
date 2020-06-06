@@ -26,7 +26,6 @@ $_SESSION['table_name'] = $table_name;
 
 
 //テーブルチェック
-try{
 $pdo = new PDO('pgsql:dbname=dcq9mmhagf14md host=ec2-3-222-30-53.compute-1.amazonaws.com port=5432','moeyszxjmvudsx','96786a380ccd8e1fc14824b34e77d4bb23193d42c740e8048902e554ee82e7d8');
 $sql = "select * from $table_name";
 $stmt = $pdo->query($sql);
@@ -34,10 +33,7 @@ if($stmt != false){
   $sql = "delete from $table_name";
   $pdo->query($sql);
 }
-}catch (PDOException $e){
-    print('Error:'.$e->getMessage());
-    die();
-}
+print_r($pdo->errorInfo());
 //テーブルを作成　
 $sql = "CREATE TABLE $table_name (
         id INT(11) AUTO_INCREMENT PRIMARY KEY,
@@ -92,8 +88,3 @@ for($i=0; $i<count($followers); $i++){
 $pdo->commit();
 $pdo = null;
 ?>
-<?php if( $flag == true ) : ?>
-			<script type="text/javascript">
-				location.href = "analysis.php?";
-			</script>
-<?php endif; ?>
