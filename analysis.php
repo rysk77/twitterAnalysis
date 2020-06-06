@@ -6,7 +6,7 @@
     $keyword = $_GET['keyword'];
     $search_word = "%$keyword%";
     $table_name = $_SESSION['table_name'];
-    $pdo = new PDO('pgsql:dbname=dcq9mmhagf14md;host=ec2-3-222-30-53.compute-1.amazonaws.com;port=5432','moeyszxjmvudsx','96786a380ccd8e1fc14824b34e77d4bb23193d42c740e8048902e554ee82e7d8');
+    $pdo = new PDO('pgsql:dbname=dcq9mmhagf14md host=ec2-3-222-30-53.compute-1.amazonaws.com port=5432','moeyszxjmvudsx','96786a380ccd8e1fc14824b34e77d4bb23193d42c740e8048902e554ee82e7d8');
     $stmt = $pdo->prepare("SELECT * from $table_name WHERE profile LIKE ? ");
     $stmt->bindParam(1, $search_word, PDO::PARAM_STR);
     $stmt->execute();
