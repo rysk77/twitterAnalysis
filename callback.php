@@ -27,12 +27,12 @@ $_SESSION['table_name'] = $table_name;
 
 //テーブルチェック
 $pdo = new PDO('pgsql:dbname=dcq9mmhagf14md host=ec2-3-222-30-53.compute-1.amazonaws.com port=5432','moeyszxjmvudsx','96786a380ccd8e1fc14824b34e77d4bb23193d42c740e8048902e554ee82e7d8');
-$sql = "select * from $table_name";
+/*$sql = "select * from $table_name";
 $stmt = $pdo->query($sql);
 if($stmt != false){
   $sql = "delete from $table_name";
   $pdo->query($sql);
-}
+}*/
 print_r($pdo->errorInfo());
 //テーブルを作成　
 $sql = "CREATE TABLE $table_name (
@@ -45,6 +45,8 @@ $sql = "CREATE TABLE $table_name (
         url TEXT
 )";
 $pdo->query($sql);
+print_r($pdo->errorInfo());
+
 $pdo = null;
 
 //フォロワー情報取得準備
@@ -86,5 +88,7 @@ for($i=0; $i<count($followers); $i++){
   $stmt->execute();
 }
 $pdo->commit();
+print_r($pdo->errorInfo());
+
 $pdo = null;
 ?>
