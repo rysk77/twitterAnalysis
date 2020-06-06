@@ -82,14 +82,13 @@ for($i=0; $i<count($followers); $i++){
   $fan     = $followers[$i]->{'followers_count'};
   $icon    = $followers[$i]->{'profile_image_url'};
   $url     = $followers[$i]->{'screen_name'};
-  $stmt    = $pdo->prepare( "INSERT INTO $table_name(
+  $stmt    = $pdo->prepare( "INSERT INTO \"$table_name\"(
                             	name, profile, friend, follower, icon, url)
                               VALUES ('$name', '$profile', '$friend', '$fan', '$icon', '$url')"
                             );
   $stmt->execute();
 }
 $pdo->commit();
-
 $pdo = null;
 ?>
 <?php if( $flag == true ) : ?>
