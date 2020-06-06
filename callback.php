@@ -35,13 +35,14 @@ if($stmt != false){
 print_r($pdo->errorInfo());
 //テーブルを作成　
 $sql = "CREATE TABLE \"$table_name\" (
-        id INT SERIAL PRIMARY KEY,
+        id SERIAL,
         name VARCHAR(50),
         profile VARCHAR(200) ,
         friend INT,
         follower INT,
         icon TEXT,
-        url TEXT
+        url TEXT,
+        PRIMARY KEY (id)
 )";
 $pdo->query($sql);
 print_r($pdo->errorInfo());
