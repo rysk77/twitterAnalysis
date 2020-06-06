@@ -30,9 +30,10 @@ $pdo = new PDO('pgsql:dbname=dcq9mmhagf14md host=ec2-3-222-30-53.compute-1.amazo
 $sql = "select * from \"$table_name\" ";
 $stmt = $pdo->query($sql);
 if($stmt != false){
+  $sql = "delete from \"$table_name\"　";
   $pdo->query($sql);
 }
-print_r($pdo->errorInfo());
+
 //テーブルを作成　
 $sql = "CREATE TABLE \"$table_name\" (
         id SERIAL,
@@ -45,7 +46,7 @@ $sql = "CREATE TABLE \"$table_name\" (
         PRIMARY KEY (id)
 )";
 $pdo->query($sql);
-print_r($pdo->errorInfo());
+
 
 $pdo = null;
 
