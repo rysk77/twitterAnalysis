@@ -89,7 +89,11 @@ for($i=0; $i<count($followers); $i++){
   $stmt->execute();
 }
 $pdo->commit();
-print_r($pdo->errorInfo());
 
 $pdo = null;
 ?>
+<?php if( $flag == true ) : ?>
+			<script type="text/javascript">
+				location.href = "analysis.php?";
+			</script>
+<?php endif; ?>
