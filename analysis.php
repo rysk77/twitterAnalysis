@@ -46,7 +46,7 @@
          <?php foreach ($results as $result) : ?>
             <tr>
               <td><img src="<?= $result['icon'] ?>"></td>
-              <td class="name"><a href="https://twitter.com/' . $result['url'] . '" target="_blank" rel="noopener noreferrer"><?= $result['name'] ?></a></td>
+              <td class="name"><a href="https://twitter.com/'<?= $result['url'] ?>'" target="_blank" rel="noopener noreferrer"><?= $result['name'] ?></a></td>
               <td><?= $result['friend'] ?></td>
               <td><?= $result['follower'] ?></td>
             </tr>
