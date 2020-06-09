@@ -35,7 +35,7 @@
         <input class="submit" type="submit" name="submit" value="検索">
       </form>
       <?php if (isset($_GET['keyword'])) : ?>
-        <p><?= $keyword ?>の検索結果 <?= $count ?>/<?= $_SESSION['followers_count']?>(<?= ($count/$_SESSION['followers_count'])*100 ?>%)</p>
+        <p><?= $keyword ?>の検索結果 <?= $count ?>/<?= $_SESSION['followers_count']?>(<?= round($count/$_SESSION['followers_count']*100) ?>%)</p>
         <table>
           <tr>
             <th></th>
@@ -46,7 +46,7 @@
          <?php foreach ($results as $result) : ?>
             <tr>
               <td><img src="<?= $result['icon'] ?>"></td>
-              <td class="name"><a href="https://twitter.com/<?= $result['url'] ?>"　target="_blank" rel="noopener noreferrer" ><?= $result['name'] ?></a></td>
+              <td class="name"><a target="_blank" rel="noopener noreferrer"　href="https://twitter.com/<?= $result['url'] ?>" ><?= $result['name'] ?></a></td>
               <td><?= $result['friend'] ?></td>
               <td><?= $result['follower'] ?></td>
             </tr>
