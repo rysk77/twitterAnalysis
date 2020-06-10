@@ -29,15 +29,15 @@
     $target = $_POST['target'];
     switch ($target) {
       case 1:
-        $stmt = $pdo->prepare("SELECT * from \"$table_name\" WHERE names LIKE ? ORDER BY $order ");
+        $stmt = $pdo->prepare("SELECT * from \"$table_name\" WHERE names LIKE ? ORDER BY '$order' ");
         $stmt->bindParam(1, $search_word, PDO::PARAM_STR);
         break;
       case 2:
-        $stmt = $pdo->prepare("SELECT * from \"$table_name\" WHERE follower LIKE ? ORDER BY $order ");
+        $stmt = $pdo->prepare("SELECT * from \"$table_name\" WHERE follower LIKE ? ORDER BY '$order' ");
         $stmt->bindParam(1, $search_word, PDO::PARAM_STR);
         break;
       case 3:
-        $stmt = $pdo->prepare("SELECT * from \"$table_name\" WHERE name LIKE ? OR WHERE follower LIKE ? ORDER BY $order ");
+        $stmt = $pdo->prepare("SELECT * from \"$table_name\" WHERE name LIKE ? OR WHERE follower LIKE ? ORDER BY '$order' ");
         $stmt->bindParam(1, $search_word, PDO::PARAM_STR);
         $stmt->bindParam(2, $search_word, PDO::PARAM_STR);
         break;
@@ -74,12 +74,12 @@
           <option value="3">フォロー数が多い順</option>
           <option value="4">フォロー数が少ない順</option>
         </select>
+        <br>
         <select  name="target">
           <option value="1">名前にキーワードが含まれる</option>
           <option value="2">プロフィールにキーワードが含まれる</option>
           <option value="3">名前かプロフィールにキーワードが含まれる</option>
         </select>
-        <input type="text" name="" value="">
       </form>
       <?php if (isset($_POST['keyword'])) : ?>
         <p><?= $keyword ?>の検索結果 <?= $count ?>/<?= $_SESSION['followers_count']?>(<?= round($count/$_SESSION['followers_count']*100) ?>%)</p>
