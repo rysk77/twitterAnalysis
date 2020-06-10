@@ -11,16 +11,16 @@
     $sort = $_POST['sort'];
     switch ($sort) {
       case 1:
-        $order = "\"follower\" ";
-        break;
-      case 2:
         $order = "\"follower\" ASC ";
         break;
+      case 2:
+        $order = "\"follower\" ";
+        break;
       case 3:
-        $order = "\"friend\" ";
+        $order = "\"friend\" ASC ";
         break;
       case 4:
-        $order = "\"riend\" ASC";
+        $order = "\"riend\" ";
         break;
     }
     $table_name = $_SESSION['table_name'];
