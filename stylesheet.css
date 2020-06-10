@@ -44,7 +44,7 @@ input.submit{
 }
 select{
   width: 200px;
-  margin: 10px auto;
+  margin-top: 10px;
 }
 table{
   margin: 0 auto;
