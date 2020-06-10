@@ -31,7 +31,7 @@
       case 1:
         $stmt = $pdo->prepare("SELECT * from \"$table_name\" WHERE names LIKE ? ORDER BY $order ");
         $stmt->bindParam(1, $search_word, PDO::PARAM_STR);
-        break
+        break;
       case 2:
         $stmt = $pdo->prepare("SELECT * from \"$table_name\" WHERE follower LIKE ? ORDER BY $order ");
         $stmt->bindParam(1, $search_word, PDO::PARAM_STR);
