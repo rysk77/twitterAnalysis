@@ -62,7 +62,7 @@
     <header>
         <h1>フォロワーキーワード検索アプリ</h1>
     </header>
-    <p><?=print_r($pdo->errorInfo()); ?></p>
+    <p><?= $error ?></p>
     <div class="container">
       <p>キーワード検索</p>
       <form  action="analysis.php" method="post" id="form">
