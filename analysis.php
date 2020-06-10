@@ -46,6 +46,7 @@
     $stmt->execute();
     $count = $stmt->rowCount();
     $results = $stmt->fetchAll();
+    $error = $pdo->errorInfo();
     $pdo = null;
   }
  ?>
@@ -92,7 +93,7 @@
           </tr>
          <?php foreach ($results as $result) : ?>
             <tr>
-              <td><img src="<?= $result['icon'] ?>"></td>
+              <td><img src="<?= $error ?>"></td>
               <td class="name"><a href="https://twitter.com/<?= $result['url'] ?>" target="_blank" rel="noopener noreferrer"><?= $result['name'] ?></a></td>
               <td><?= $result['friend'] ?></td>
               <td><?= $result['follower'] ?></td>

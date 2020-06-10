@@ -43,8 +43,8 @@ input.submit{
   color: white;
 }
 select{
-  width: 80%;
-  margin: 10px auto;
+  width: 200px;
+  margin: 15px auto;
 }
 table{
   margin: 0 auto;
