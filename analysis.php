@@ -46,7 +46,6 @@
     $stmt->execute();
     $count = $stmt->rowCount();
     $results = $stmt->fetchAll();
-    $error = $pdo->errorInfo();
     $pdo = null;
   }
  ?>
@@ -62,7 +61,6 @@
     <header>
         <h1>フォロワーキーワード検索アプリ</h1>
     </header>
-    <p><?= $error ?></p>
     <div class="container">
       <p>キーワード検索</p>
       <form  action="analysis.php" method="post" id="form">
@@ -93,7 +91,7 @@
           </tr>
          <?php foreach ($results as $result) : ?>
             <tr>
-              <td><img src="<?= $error ?>"></td>
+              <td><img src="<?= $result['icon'] ?>"></td>
               <td class="name"><a href="https://twitter.com/<?= $result['url'] ?>" target="_blank" rel="noopener noreferrer"><?= $result['name'] ?></a></td>
               <td><?= $result['friend'] ?></td>
               <td><?= $result['follower'] ?></td>
