@@ -42,6 +42,7 @@
         $stmt->bindParam(2, $search_word, PDO::PARAM_STR);
         break;
     }
+    //SQL実行
     $stmt->execute();
     $count = $stmt->rowCount();
     $results = $stmt->fetchAll();
@@ -80,7 +81,7 @@
         </select>
         <input type="text" name="" value="">
       </form>
-      <?php if (isset($_GET['keyword'])) : ?>
+      <?php if (isset($_POST['keyword'])) : ?>
         <p><?= $keyword ?>の検索結果 <?= $count ?>/<?= $_SESSION['followers_count']?>(<?= round($count/$_SESSION['followers_count']*100) ?>%)</p>
         <table>
           <tr>
