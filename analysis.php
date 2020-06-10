@@ -11,16 +11,16 @@
     $sort = $_POST['sort'];
     switch ($sort) {
       case 1:
-        $order = "follower DESC";
+        $order = "\"follower\" DESC";
         break;
       case 2:
-        $order = "follower ASC";
+        $order = "\"follower\" ASC";
         break;
       case 3:
-        $order = "friend DESC";
+        $order = "\"friend\" DESC";
         break;
       case 4:
-        $order = "friend ASC";
+        $order = "\"riend\" ASC";
         break;
     }
     $table_name = $_SESSION['table_name'];
@@ -29,15 +29,15 @@
     $target = $_POST['target'];
     switch ($target) {
       case 1:
-        $stmt = $pdo->prepare("SELECT * from \"$table_name\" WHERE names LIKE ? ORDER BY '$order' ");
+        $stmt = $pdo->prepare("SELECT * from \"$table_name\" WHERE names LIKE ? ORDER BY $order ");
         $stmt->bindParam(1, $search_word, PDO::PARAM_STR);
         break;
       case 2:
-        $stmt = $pdo->prepare("SELECT * from \"$table_name\" WHERE follower LIKE ? ORDER BY '$order' ");
+        $stmt = $pdo->prepare("SELECT * from \"$table_name\" WHERE follower LIKE ? ORDER BY $order ");
         $stmt->bindParam(1, $search_word, PDO::PARAM_STR);
         break;
       case 3:
-        $stmt = $pdo->prepare("SELECT * from \"$table_name\" WHERE name LIKE ? OR WHERE follower LIKE ? ORDER BY '$order' ");
+        $stmt = $pdo->prepare("SELECT * from \"$table_name\" WHERE name LIKE ? OR WHERE follower LIKE ? ORDER BY $order ");
         $stmt->bindParam(1, $search_word, PDO::PARAM_STR);
         $stmt->bindParam(2, $search_word, PDO::PARAM_STR);
         break;
