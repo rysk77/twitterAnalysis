@@ -71,8 +71,8 @@
         <p>検索条件</p>
         <select  name="target">
           <option value="a" >キーワードが名前に含まれる</option>
-          <option value="b" <?php if($_POST['target'] == "b") ?>selected<?php endif; ?>>キーワードがプロフィールに含まれる</option>
-          <option value="c" <?php if($_POST['target'] == "c") ?>selected<?php endif; ?>>キーワードが名前かプロフィールに含まれる</option>
+          <option value="b" <?php if($_POST['target'] == "b"):?>selected<?php endif; ?>>キーワードがプロフィールに含まれる</option>
+          <option value="c" <?php if($_POST['target'] == "c"):?>selected<?php endif; ?>>キーワードが名前かプロフィールに含まれる</option>
         </select>
         <br>
         <select  name="sort">
