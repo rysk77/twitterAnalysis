@@ -37,11 +37,11 @@
         $stmt->bindParam(1, $search_word, PDO::PARAM_STR);
         break;
       case "b":
-        $stmt = $pdo->prepare("SELECT * from \"$table_name\" WHERE profile LIKE ? ORDER BY $order");
+        $stmt = $pdo->prepare("SELECT * from \"$table_name\" WHERE profile LIKE ? ORDER BY \"$column\" $order ");
         $stmt->bindParam(1, $search_word, PDO::PARAM_STR);
         break;
       case "c":
-        $stmt = $pdo->prepare("SELECT * from \"$table_name\" WHERE name LIKE ? OR WHERE profile LIKE ? ORDER BY $order");
+        $stmt = $pdo->prepare("SELECT * from \"$table_name\" WHERE name LIKE ? OR WHERE profile LIKE ? ORDER BY \"$column\" $order ");
         $stmt->bindParam(1, $search_word, PDO::PARAM_STR);
         $stmt->bindParam(2, $search_word, PDO::PARAM_STR);
         break;
@@ -72,16 +72,16 @@
         <input class="submit" type="submit" name="submit" value="検索">
         <p>検索条件</p>
         <select  name="target">
-          <option value="a">名前にキーワードが含まれる</option>
-          <option value="b">プロフィールにキーワードが含まれる</option>
-          <option value="c">名前かプロフィールにキーワードが含まれる</option>
+          <option value="a" <?php if($_POST['target'] = "a"): ?>selected<?php endif; ?>>名前にキーワードが含まれる</option>
+          <option value="b" <?php if($_POST['target'] = "b"): ?>selected<?php endif; ?>>プロフィールにキーワードが含まれる</option>
+          <option value="c" <?php if($_POST['target'] = "c"): ?>selected<?php endif; ?>>名前かプロフィールにキーワードが含まれる</option>
         </select>
         <br>
         <select  name="sort">
-          <option value="a">フォロワー数が多い順</option>
-          <option value="d">フォロワー数が少ない順</option>
-          <option value="c">フォロー数が多い順</option>
-          <option value="d">フォロー数が少ない順</option>
+          <option value="a" <?php if($_POST['sort'] = "a"): ?>selected<?php endif; ?>>フォロワー数が多い順</option>
+          <option value="d" <?php if($_POST['sort'] = "b"): ?>selected<?php endif; ?>>フォロワー数が少ない順</option>
+          <option value="c" <?php if($_POST['sort'] = "c"): ?>selected<?php endif; ?>>フォロー数が多い順</option>
+          <option value="d" <?php if($_POST['sort'] = "d"): ?>selected<?php endif; ?>>フォロー数が少ない順</option>
         </select>
       </form>
       <?php if (isset($_POST['keyword'])) : ?>
