@@ -14,13 +14,13 @@
         $order = "follower ";
         break;
       case "b":
-        $order = "follower ASC ";
+        $order = "'follower' ASC ";
         break;
       case "c":
         $order = "friend ";
         break;
       case "d":
-        $order = "riend ASC ";
+        $order = "'friend' ASC ";
         break;
     }
     $table_name = $_SESSION['table_name'];
@@ -72,6 +72,7 @@
           <option value="b">プロフィールにキーワードが含まれる</option>
           <option value="c">名前かプロフィールにキーワードが含まれる</option>
         </select>
+        <br>
         <select  name="sort">
           <option value="a">フォロワー数が多い順</option>
           <option value="d">フォロワー数が少ない順</option>
