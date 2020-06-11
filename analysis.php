@@ -10,16 +10,16 @@
     //ソート指定
     $sort = $_POST['sort'];
     switch ($sort) {
-      case "1":
+      case "a":
         $order = "follower ";
         break;
-      case "2":
+      case "b":
         $order = "follower ASC ";
         break;
-      case "3":
+      case "c":
         $order = "friend ";
         break;
-      case "4":
+      case "d":
         $order = "riend ASC ";
         break;
     }
@@ -28,15 +28,15 @@
     //検索条件指定
     $target = $_POST['target'];
     switch ($target) {
-      case "1":
+      case "a":
         $stmt = $pdo->prepare("SELECT * from \"$table_name\" WHERE name LIKE ? ORDER BY $order ");
         $stmt->bindParam(1, $search_word, PDO::PARAM_STR);
         break;
-      case "2":
+      case "b":
         $stmt = $pdo->prepare("SELECT * from \"$table_name\" WHERE profile LIKE ? ORDER BY $order");
         $stmt->bindParam(1, $search_word, PDO::PARAM_STR);
         break;
-      case "3":
+      case "c":
         $stmt = $pdo->prepare("SELECT * from \"$table_name\" WHERE name LIKE ? OR WHERE profile LIKE ? ORDER BY $order");
         $stmt->bindParam(1, $search_word, PDO::PARAM_STR);
         $stmt->bindParam(2, $search_word, PDO::PARAM_STR);
@@ -67,17 +67,16 @@
         <input type="text" name="keyword" >
         <input class="submit" type="submit" name="submit" value="検索">
         <p>検索条件</p>
-        <select  name="sort">
-          <option value="1">フォロワー数が多い順</option>
-          <option value="2">フォロワー数が少ない順</option>
-          <option value="3">フォロー数が多い順</option>
-          <option value="4">フォロー数が少ない順</option>
-        </select>
-        <br>
         <select  name="target">
-          <option value="1">名前にキーワードが含まれる</option>
-          <option value="2">プロフィールにキーワードが含まれる</option>
-          <option value="3">名前かプロフィールにキーワードが含まれる</option>
+          <option value="a">名前にキーワードが含まれる</option>
+          <option value="b">プロフィールにキーワードが含まれる</option>
+          <option value="c">名前かプロフィールにキーワードが含まれる</option>
+        </select>
+        <select  name="sort">
+          <option value="a">フォロワー数が多い順</option>
+          <option value="d">フォロワー数が少ない順</option>
+          <option value="c">フォロー数が多い順</option>
+          <option value="d">フォロー数が少ない順</option>
         </select>
       </form>
       <?php if (isset($_POST['keyword'])) : ?>
