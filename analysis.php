@@ -39,7 +39,7 @@
         $stmt->bindParam(1, $search_word, PDO::PARAM_STR);
         break;
       case "c":
-        $stmt = $pdo->prepare("SELECT * from \"$table_name\" WHERE name LIKE ? OR WHERE profile LIKE ? ORDER BY \"$column\" $order ");
+        $stmt = $pdo->prepare("SELECT * from \"$table_name\" WHERE name LIKE ? OR profile LIKE ? ORDER BY \"$column\" $order ");
         $stmt->bindParam(1, $search_word, PDO::PARAM_STR);
         $stmt->bindParam(2, $search_word, PDO::PARAM_STR);
         break;
