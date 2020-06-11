@@ -77,9 +77,9 @@
         <br>
         <select  name="sort">
           <option value="a" >フォロワー数が多い順</option>
-          <option value="d" <?php if($_POST['sort'] == "b") ?>selected<?php endif; ?>>フォロワー数が少ない順</option>
-          <option value="c" <?php if($_POST['sort'] == "c") ?>selected<?php endif; ?>>フォロー数が多い順</option>
-          <option value="d" <?php if($_POST['sort'] == "d") ?>selected<?php endif; ?>>フォロー数が少ない順</option>
+          <option value="d" <?php if($_POST['sort'] == "b"):?>selected<?php endif; ?>>フォロワー数が少ない順</option>
+          <option value="c" <?php if($_POST['sort'] == "c"):?>selected<?php endif; ?>>フォロー数が多い順</option>
+          <option value="d" <?php if($_POST['sort'] == "d"):?>selected<?php endif; ?>>フォロー数が少ない順</option>
         </select>
       </form>
       <?php if (isset($_POST['keyword'])) : ?>
