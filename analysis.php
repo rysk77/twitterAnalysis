@@ -10,17 +10,17 @@
     //ソート指定
     $sort = $_POST['sort'];
     switch ($sort) {
-      case 1:
-        $order = "\"follower\" ";
+      case "1":
+        $order = "follower ";
         break;
-      case 2:
-        $order = "\"follower\" ASC ";
+      case "2":
+        $order = "follower ASC ";
         break;
-      case 3:
-        $order = "\"friend\" ";
+      case "3":
+        $order = "friend ";
         break;
-      case 4:
-        $order = "\"riend\" ASC ";
+      case "4":
+        $order = "riend ASC ";
         break;
     }
     $table_name = $_SESSION['table_name'];
@@ -28,15 +28,15 @@
     //検索条件指定
     $target = $_POST['target'];
     switch ($target) {
-      case 1:
+      case "1":
         $stmt = $pdo->prepare("SELECT * from \"$table_name\" WHERE name LIKE ? ORDER BY $order ");
         $stmt->bindParam(1, $search_word, PDO::PARAM_STR);
         break;
-      case 2:
+      case "2":
         $stmt = $pdo->prepare("SELECT * from \"$table_name\" WHERE follower LIKE ? ORDER BY $order");
         $stmt->bindParam(1, $search_word, PDO::PARAM_STR);
         break;
-      case 3:
+      case "3":
         $stmt = $pdo->prepare("SELECT * from \"$table_name\" WHERE name LIKE ? OR WHERE follower LIKE ? ORDER BY $order");
         $stmt->bindParam(1, $search_word, PDO::PARAM_STR);
         $stmt->bindParam(2, $search_word, PDO::PARAM_STR);
