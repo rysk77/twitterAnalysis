@@ -63,7 +63,6 @@
     <header>
         <h1>フォロワーキーワード検索アプリ</h1>
     </header>
-    <p><?= $pdo->errorInfo(); ?></p>
     <div class="container">
       <p>キーワード検索</p>
       <form  action="analysis.php" method="post" id="form">
