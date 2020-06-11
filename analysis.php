@@ -33,11 +33,11 @@
         $stmt->bindParam(1, $search_word, PDO::PARAM_STR);
         break;
       case "2":
-        $stmt = $pdo->prepare("SELECT * from \"$table_name\" WHERE follower LIKE ? ORDER BY $order");
+        $stmt = $pdo->prepare("SELECT * from \"$table_name\" WHERE profile LIKE ? ORDER BY $order");
         $stmt->bindParam(1, $search_word, PDO::PARAM_STR);
         break;
       case "3":
-        $stmt = $pdo->prepare("SELECT * from \"$table_name\" WHERE name LIKE ? OR WHERE follower LIKE ? ORDER BY $order");
+        $stmt = $pdo->prepare("SELECT * from \"$table_name\" WHERE name LIKE ? OR WHERE profile LIKE ? ORDER BY $order");
         $stmt->bindParam(1, $search_word, PDO::PARAM_STR);
         $stmt->bindParam(2, $search_word, PDO::PARAM_STR);
         break;
