@@ -103,5 +103,10 @@
       <?php endif; ?>
     </div>
   <footer><p>Copyright (C) 2020 Ryo. all rights reserved.</p></footer>
+  <script type="text/javascript">
+   window.onunload = function(){
+     location.href = "analysis.php?";
+   }
+  </script>
   </body>
 </html>
