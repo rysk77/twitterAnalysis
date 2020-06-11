@@ -31,17 +31,14 @@
     //検索条件指定
     switch ($_POST['target']) {
       case "a":
-        $label = "名前";
         $stmt = $pdo->prepare("SELECT * from \"$table_name\" WHERE name LIKE ? ORDER BY \"$column\" $order ");
         $stmt->bindParam(1, $search_word, PDO::PARAM_STR);
         break;
       case "b":
-      　$label = "プロフィール";
         $stmt = $pdo->prepare("SELECT * from \"$table_name\" WHERE profile LIKE ? ORDER BY \"$column\" $order ");
         $stmt->bindParam(1, $search_word, PDO::PARAM_STR);
         break;
       case "c":
-      　$label = "名前かプロフィール";
         $stmt = $pdo->prepare("SELECT * from \"$table_name\" WHERE name LIKE ? OR profile LIKE ? ORDER BY \"$column\" $order ");
         $stmt->bindParam(1, $search_word, PDO::PARAM_STR);
         $stmt->bindParam(2, $search_word, PDO::PARAM_STR);
