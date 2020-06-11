@@ -11,16 +11,20 @@
     $sort = $_POST['sort'];
     switch ($sort) {
       case "a":
-        $order = "follower ";
+        $column = "follower";
+        $order  = "DESC"
         break;
       case "b":
-        $order = "'follower' ASC ";
+        $column = "follower";
+        $order  = "ASC"
         break;
       case "c":
-        $order = "friend ";
+        $column = "friend";
+        $order  = "DESC"
         break;
       case "d":
-        $order = "'friend' ASC ";
+        $column = "friend";
+        $order  = "ASC"
         break;
     }
     $table_name = $_SESSION['table_name'];
@@ -29,7 +33,7 @@
     $target = $_POST['target'];
     switch ($target) {
       case "a":
-        $stmt = $pdo->prepare("SELECT * from \"$table_name\" WHERE name LIKE ? ORDER BY $order ");
+        $stmt = $pdo->prepare("SELECT * from \"$table_name\" WHERE name LIKE ? ORDER BY \"$column\" $order ");
         $stmt->bindParam(1, $search_word, PDO::PARAM_STR);
         break;
       case "b":
