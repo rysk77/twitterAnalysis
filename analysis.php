@@ -105,7 +105,7 @@
   <footer><p>Copyright (C) 2020 Ryo. all rights reserved.</p></footer>
   <script type="text/javascript">
    window.onunload = function(){
-     location.href = "analysis.php?";
+     $.ajax({ type: "POST", url: "delete.php"});
    }
   </script>
   </body>
