@@ -12,19 +12,19 @@
     switch ($sort) {
       case "a":
         $column = "follower";
-        $order  = "DESC"
+        $order  = "DESC";
         break;
       case "b":
         $column = "follower";
-        $order  = "ASC"
+        $order  = "ASC";
         break;
       case "c":
         $column = "friend";
-        $order  = "DESC"
+        $order  = "DESC";
         break;
       case "d":
         $column = "friend";
-        $order  = "ASC"
+        $order  = "ASC";
         break;
     }
     $table_name = $_SESSION['table_name'];
