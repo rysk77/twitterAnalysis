@@ -8,8 +8,7 @@
     $search_word = "%$keyword%";
     //SQL準備
     //ソート指定
-    $sort = $_POST['sort'];
-    switch ($sort) {
+    switch ($_POST['sort']) {
       case "a":
         $column = "follower";
         $order  = "DESC";
@@ -30,8 +29,7 @@
     $table_name = $_SESSION['table_name'];
     $pdo = new PDO('pgsql:dbname=dcq9mmhagf14md host=ec2-3-222-30-53.compute-1.amazonaws.com port=5432','moeyszxjmvudsx','96786a380ccd8e1fc14824b34e77d4bb23193d42c740e8048902e554ee82e7d8');
     //検索条件指定
-    $target = $_POST['target'];
-    switch ($target) {
+    switch ($_POST['target']) {
       case "a":
         $stmt = $pdo->prepare("SELECT * from \"$table_name\" WHERE name LIKE ? ORDER BY \"$column\" $order ");
         $stmt->bindParam(1, $search_word, PDO::PARAM_STR);
@@ -65,6 +63,7 @@
     <header>
         <h1>フォロワーキーワード検索アプリ</h1>
     </header>
+    <p><?= $pdo->errorInfo(); ?></p>
     <div class="container">
       <p>キーワード検索</p>
       <form  action="analysis.php" method="post" id="form">
@@ -72,9 +71,9 @@
         <input class="submit" type="submit" name="submit" value="検索">
         <p>検索条件</p>
         <select  name="target">
-          <option value="a" <?php if($_POST['target'] = "a"): ?>selected<?php endif; ?>>名前にキーワードが含まれる</option>
-          <option value="b" <?php if($_POST['target'] = "b"): ?>selected<?php endif; ?>>プロフィールにキーワードが含まれる</option>
-          <option value="c" <?php if($_POST['target'] = "c"): ?>selected<?php endif; ?>>名前かプロフィールにキーワードが含まれる</option>
+          <option value="a" <?php if($_POST['target'] = "a"): ?>selected<?php endif; ?> >名前にキーワードが含まれる</option>
+          <option value="b" <?php if($_POST['target'] = "b"): ?>selected<?php endif; ?> >プロフィールにキーワードが含まれる</option>
+          <option value="c" <?php if($_POST['target'] = "c"): ?>selected<?php endif; ?> >名前かプロフィールにキーワードが含まれる</option>
         </select>
         <br>
         <select  name="sort">
