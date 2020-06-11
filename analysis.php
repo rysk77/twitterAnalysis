@@ -71,19 +71,19 @@
         <p>検索条件</p>
         <select  name="target">
           <option value="a" >キーワードが名前に含まれる</option>
-          <option value="b" >キーワードがプロフィールに含まれる</option>
-          <option value="c" >キーワードが名前かプロフィールに含まれる</option>
+          <option value="b" <?php if($_POST['target'] == "b") ?>selected<?php endif; ?>>キーワードがプロフィールに含まれる</option>
+          <option value="c" <?php if($_POST['target'] == "c") ?>selected<?php endif; ?>>キーワードが名前かプロフィールに含まれる</option>
         </select>
         <br>
         <select  name="sort">
           <option value="a" >フォロワー数が多い順</option>
-          <option value="d" >フォロワー数が少ない順</option>
-          <option value="c" >フォロー数が多い順</option>
-          <option value="d" >フォロー数が少ない順</option>
+          <option value="d" <?php if($_POST['sort'] == "b") ?>selected<?php endif; ?>>フォロワー数が少ない順</option>
+          <option value="c" <?php if($_POST['sort'] == "c") ?>selected<?php endif; ?>>フォロー数が多い順</option>
+          <option value="d" <?php if($_POST['sort'] == "d") ?>selected<?php endif; ?>>フォロー数が少ない順</option>
         </select>
       </form>
       <?php if (isset($_POST['keyword'])) : ?>
-        <p><?= $keyword ?>が<?= $label ?>に含まれるフォロワー<?= $count ?>/<?= $_SESSION['followers_count']?>(<?= round($count/$_SESSION['followers_count']*100) ?>%)</p>
+        <p><?= $keyword ?>の検索結果<?= $count ?>/<?= $_SESSION['followers_count']?>(<?= round($count/$_SESSION['followers_count']*100) ?>%)</p>
         <table>
           <tr>
             <th></th>
