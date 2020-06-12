@@ -38,7 +38,7 @@ $oauthUrl = $connection->url('oauth/authorize', array('oauth_token' => $request_
         <h1>フォロワーキーワード検索アプリ</h1>
     </header>
     <div class="container">
-      <p>検索したキーワードがプロフィールに含まれるフォロワー一覧を表示します</p>
+      <p>検索したキーワードが名前やプロフィールに含まれるフォロワー一覧を表示します</p>
   		<a href="<?php echo $oauthUrl; ?>" ><div class="btn"><i class="fab fa-twitter"></i>Twitterでログイン</div></a>
     </div>
   </body>
