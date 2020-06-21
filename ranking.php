@@ -25,7 +25,7 @@ foreach ($results as $result) {
     <header>
         <h1>フォロワーキーワード検索アプリ</h1>
     </header>
-    <div class="contents">
+    <div class="container">
       <p>フォロワーのプロフィールによく含まれる単語BEST50</p>
         <table>
           <tr>

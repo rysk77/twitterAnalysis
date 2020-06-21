@@ -63,7 +63,7 @@
      <header>
          <h1>フォロワーキーワード検索アプリ</h1>
      </header>
-     <div class="contents">
+     <div class="container">
        <p>キーワード検索</p>
        <form  action="analysis.php" method="post" id="form">
          <input type="text" name="keyword" >

@@ -110,7 +110,7 @@ $_SESSION['profiles'] = $profiles;
     <header>
         <h1>フォロワーキーワード検索アプリ</h1>
     </header>
-    <div class="contents">
+    <div class="container">
       <?php if( $flag == false ) : ?>
       		<p>TwitterAPIの制限がかかっちゃってる！ごめんなさい！'</p>
       <?php endif; ?>
