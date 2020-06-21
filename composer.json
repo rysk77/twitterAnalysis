@@ -1,5 +1,12 @@
 {
-  "require": {
-    "ext-mbstring": "*"
-  }
+    "name": "rysk_77/twitter",
+    "authors": [
+        {
+            "name": "rysk77",
+            "email": "ryowork77@gmail.com"
+        }
+    ],
+    "require": {
+      "ext-mbstring": "*"
+    }
 }
