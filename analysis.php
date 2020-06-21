@@ -60,7 +60,6 @@
      <link rel="stylesheet" href="stylesheet.css">
  	</head>
  	<body>
-     <div class="container">
      <header>
          <h1>フォロワーキーワード検索アプリ</h1>
      </header>
@@ -83,7 +82,7 @@
            <option value="d" <?php if($_POST['sort'] == "d"):?>selected<?php endif; ?>>フォロー数が少ない順</option>
          </select>
        </form>
-       <a href="https://follwerkeywordsearch.herokuapp.com/ranking.php">キーワードランキングを見る</a>
+       <a href="ranking.php">キーワードランキングを見る</a>
        <?php if (isset($_POST['keyword'])) : ?>
          <p><?= $keyword ?>の検索結果<?= $count ?>/<?= $_SESSION['followers_count']?>(<?= round($count/$_SESSION['followers_count']*100) ?>%)</p>
          <table>
@@ -105,6 +104,5 @@
        <?php endif; ?>
      </div>
    <footer><p>Copyright (C) 2020 FukaFuka. all rights reserved.</p></footer>
-   </div>
    </body>
  </html>

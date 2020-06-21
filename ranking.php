@@ -22,7 +22,6 @@ foreach ($results as $result) {
     <link rel="stylesheet" href="stylesheet.css">
 	</head>
 	<body>
-    <div class="container">
     <header>
         <h1>フォロワーキーワード検索アプリ</h1>
     </header>
@@ -45,9 +44,8 @@ foreach ($results as $result) {
             <?php $i++; ?>
           <?php endforeach; ?>
         </table>
-        <a href="https://follwerkeywordsearch.herokuapp.com/analysis.php">キーワード検索画面に戻る</a>
+        <a href="analysis.php">キーワード検索画面に戻る</a>
     </div>
   <footer><p>Copyright (C) 2020 FukaFuka. all rights reserved.</p></footer>
-  </div>
   </body>
 </html>

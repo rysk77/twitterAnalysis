@@ -34,7 +34,6 @@ $oauthUrl = $connection->url('oauth/authorize', array('oauth_token' => $request_
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 	</head>
 	<body>
-    <div class="container">
     <header>
         <h1>フォロワーキーワード検索アプリ</h1>
     </header>
@@ -43,6 +42,5 @@ $oauthUrl = $connection->url('oauth/authorize', array('oauth_token' => $request_
   		<a href="<?php echo $oauthUrl; ?>" ><div class="btn"><i class="fab fa-twitter"></i>Twitterでログイン</div></a>
     </div>
   <footer><p>Copyright (C) 2020 FukaFuka. all rights reserved.</p></footer>
-  </div>
   </body>
 </html>

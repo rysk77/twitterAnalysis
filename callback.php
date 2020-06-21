@@ -34,6 +34,7 @@ if($stmt != false){
   $pdo->query($sql);
 }
 
+
 //テーブルを作成　
 $sql = "CREATE TABLE \"$table_name\" (
         id SERIAL,
@@ -69,6 +70,7 @@ do {
     $followers = array_merge($followers, $response->users);
 } while ($params['cursor'] = $response->next_cursor_str);
 
+$profiles = "";//ランキング用テキスト
 //DBにユーザー情報格納
 $pdo = new PDO('pgsql:dbname=dcq9mmhagf14md host=ec2-3-222-30-53.compute-1.amazonaws.com port=5432','moeyszxjmvudsx','96786a380ccd8e1fc14824b34e77d4bb23193d42c740e8048902e554ee82e7d8');
 $pdo->beginTransaction();
@@ -86,9 +88,11 @@ for($i=0; $i<count($followers); $i++){
                               VALUES ('$name', '$profile', '$friend', '$fan', '$icon', '$url')"
                             );
   $stmt->execute();
+  $profiles .= $profile;
 }
 $pdo->commit();
 $pdo = null;
+$_SESSION['profiles'] = $profiles;
 ?>
 <?php if( $flag == true ) : ?>
 			<script type="text/javascript">
@@ -103,7 +107,6 @@ $pdo = null;
     <link rel="stylesheet" href="stylesheet.css">
 	</head>
 	<body>
-    <div class="container">
     <header>
         <h1>フォロワーキーワード検索アプリ</h1>
     </header>
@@ -113,6 +116,5 @@ $pdo = null;
       <?php endif; ?>
     </div>
   <footer><p>Copyright (C) 2020 FukaFuka. all rights reserved.</p></footer>
-  </div>
   </body>
 </html>
