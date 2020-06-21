@@ -17,6 +17,10 @@ a {
   text-decoration: none;
   margin: 10px auto;
 }
+.container{
+  position: relative;
+  min-height: 100%;
+}
 .contents{
   height:auto;
   margin-top: 10px;
@@ -61,6 +65,8 @@ footer{
   color: #7FB6F5;
   height: 50px;
   width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 
 .btn {
