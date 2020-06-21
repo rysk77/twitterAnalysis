@@ -15,17 +15,13 @@ header{
 
 a {
   text-decoration: none;
-  margin: 10px auto;
 }
 .container{
-  position: relative;
-  min-height: 100%;
-}
-.contents{
-  height:auto;
-  margin-top: 10px;
-  margin-bottom: 150px;
+  position: absolute;
+  top: 100px;
+  margin: 30px auto;
   width: 100%;
+  margin-bottom: 150px;
 }
 .btn{
   background-color: #7FB6F5;
@@ -62,11 +58,11 @@ table{
 footer{
   background-color: white;
   border-top: 1px solid #7FB6F5;
+  bottom: 0;
   color: #7FB6F5;
   height: 50px;
+  position: fixed;
   width: 100%;
-  position: absolute;
-  bottom: 0;
 }
 
 .btn {
