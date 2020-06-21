@@ -83,7 +83,7 @@
            <option value="d" <?php if($_POST['sort'] == "d"):?>selected<?php endif; ?>>フォロー数が少ない順</option>
          </select>
        </form>
-       <a href="ranking.php">キーワードランキングを見る</a>
+       <a href="https://follwerkeywordsearch.herokuapp.com/ranking.php">キーワードランキングを見る</a>
        <?php if (isset($_POST['keyword'])) : ?>
          <p><?= $keyword ?>の検索結果<?= $count ?>/<?= $_SESSION['followers_count']?>(<?= round($count/$_SESSION['followers_count']*100) ?>%)</p>
          <table>

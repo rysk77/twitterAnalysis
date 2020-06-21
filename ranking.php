@@ -45,7 +45,7 @@ foreach ($results as $result) {
             <?php $i++; ?>
           <?php endforeach; ?>
         </table>
-        <a href="analysis.php">キーワード検索画面に戻る</a>
+        <a href="https://follwerkeywordsearch.herokuapp.com/analysis.php">キーワード検索画面に戻る</a>
     </div>
   <footer><p>Copyright (C) 2020 FukaFuka. all rights reserved.</p></footer>
   </div>
