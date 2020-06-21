@@ -63,7 +63,6 @@ $flag = true;
 do {
     $response = $user_connect->get('followers/list', $params);
     if (!isset($response->users)) {
-        echo 'TwitterAPIの制限がかかっちゃってる！ごめんなさい！' . PHP_EOL;
         $flag = false;
         break;
     }
@@ -96,3 +95,24 @@ $pdo = null;
 				location.href = "analysis.php?";
 			</script>
 <?php endif; ?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+	  <title>login</title>
+    <link rel="stylesheet" href="stylesheet.css">
+	</head>
+	<body>
+    <div class="container">
+    <header>
+        <h1>フォロワーキーワード検索アプリ</h1>
+    </header>
+    <div class="contents">
+      <?php if( $flag == false ) : ?>
+      		<p>TwitterAPIの制限がかかっちゃってる！ごめんなさい！'</p>
+      <?php endif; ?>
+    </div>
+  <footer><p>Copyright (C) 2020 FukaFuka. all rights reserved.</p></footer>
+  </div>
+  </body>
+</html>

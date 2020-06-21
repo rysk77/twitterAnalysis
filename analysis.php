@@ -52,56 +52,59 @@
   }
  ?>
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-	  <title>login</title>
-    <link rel="stylesheet" href="stylesheet.css">
-	</head>
-	<body>
-    <header>
-        <h1>フォロワーキーワード検索アプリ</h1>
-    </header>
-    <div class="container">
-      <p>キーワード検索</p>
-      <form  action="analysis.php" method="post" id="form">
-        <input type="text" name="keyword" >
-        <input class="submit" type="submit" name="submit" value="検索">
-        <p>検索条件</p>
-        <select  name="target">
-          <option value="a" >キーワードが名前に含まれる</option>
-          <option value="b" <?php if($_POST['target'] == "b"):?>selected<?php endif; ?>>キーワードがプロフィールに含まれる</option>
-          <option value="c" <?php if($_POST['target'] == "c"):?>selected<?php endif; ?>>キーワードが名前かプロフィールに含まれる</option>
-        </select>
-        <br>
-        <select  name="sort">
-          <option value="a" >フォロワー数が多い順</option>
-          <option value="d" <?php if($_POST['sort'] == "b"):?>selected<?php endif; ?>>フォロワー数が少ない順</option>
-          <option value="c" <?php if($_POST['sort'] == "c"):?>selected<?php endif; ?>>フォロー数が多い順</option>
-          <option value="d" <?php if($_POST['sort'] == "d"):?>selected<?php endif; ?>>フォロー数が少ない順</option>
-        </select>
-      </form>
-      <?php if (isset($_POST['keyword'])) : ?>
-        <p><?= $keyword ?>の検索結果<?= $count ?>/<?= $_SESSION['followers_count']?>(<?= round($count/$_SESSION['followers_count']*100) ?>%)</p>
-        <table>
-          <tr>
-            <th></th>
-            <th class="name">名前</th>
-            <th>フォロー</th>
-            <th>フォロワー</th>
-          </tr>
-         <?php foreach ($results as $result) : ?>
-            <tr>
-              <td><img src="<?= $result['icon'] ?>"></td>
-              <td class="name"><a href="https://twitter.com/<?= $result['url'] ?>" target="_blank" rel="noopener noreferrer"><?= $result['name'] ?></a></td>
-              <td><?= $result['friend'] ?></td>
-              <td><?= $result['follower'] ?></td>
-            </tr>
-          <?php endforeach; ?>
-        </table>
-      <?php endif; ?>
-    </div>
-  <footer><p>Copyright (C) 2020 Ryo. all rights reserved.</p></footer>
-  </body>
-</html>
+ <!DOCTYPE html>
+ <html>
+   <head>
+     <meta charset="utf-8">
+ 	  <title>login</title>
+     <link rel="stylesheet" href="stylesheet.css">
+ 	</head>
+ 	<body>
+     <div class="container">
+     <header>
+         <h1>フォロワーキーワード検索アプリ</h1>
+     </header>
+     <div class="contents">
+       <p>キーワード検索</p>
+       <form  action="analysis.php" method="post" id="form">
+         <input type="text" name="keyword" >
+         <input class="submit" type="submit" name="submit" value="検索">
+         <p>検索条件</p>
+         <select  name="target">
+           <option value="a" >キーワードが名前に含まれる</option>
+           <option value="b" <?php if($_POST['target'] == "b"):?>selected<?php endif; ?>>キーワードがプロフィールに含まれる</option>
+           <option value="c" <?php if($_POST['target'] == "c"):?>selected<?php endif; ?>>キーワードが名前かプロフィールに含まれる</option>
+         </select>
+         <br>
+         <select  name="sort">
+           <option value="a" >フォロワー数が多い順</option>
+           <option value="d" <?php if($_POST['sort'] == "b"):?>selected<?php endif; ?>>フォロワー数が少ない順</option>
+           <option value="c" <?php if($_POST['sort'] == "c"):?>selected<?php endif; ?>>フォロー数が多い順</option>
+           <option value="d" <?php if($_POST['sort'] == "d"):?>selected<?php endif; ?>>フォロー数が少ない順</option>
+         </select>
+       </form>
+       <a href="ranking.php">キーワードランキングを見る</a>
+       <?php if (isset($_POST['keyword'])) : ?>
+         <p><?= $keyword ?>の検索結果<?= $count ?>/<?= $_SESSION['followers_count']?>(<?= round($count/$_SESSION['followers_count']*100) ?>%)</p>
+         <table>
+           <tr>
+             <th></th>
+             <th class="name">名前</th>
+             <th>フォロー</th>
+             <th>フォロワー</th>
+           </tr>
+          <?php foreach ($results as $result) : ?>
+             <tr>
+               <td><img src="<?= $result['icon'] ?>"></td>
+               <td class="name"><a href="https://twitter.com/<?= $result['url'] ?>" target="_blank" rel="noopener noreferrer"><?= $result['name'] ?></a></td>
+               <td><?= $result['friend'] ?></td>
+               <td><?= $result['follower'] ?></td>
+             </tr>
+           <?php endforeach; ?>
+         </table>
+       <?php endif; ?>
+     </div>
+   <footer><p>Copyright (C) 2020 FukaFuka. all rights reserved.</p></footer>
+   </div>
+   </body>
+ </html>
