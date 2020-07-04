@@ -7,7 +7,7 @@ $results = $igo->parse($text);
 $words =  array();
 foreach ($results as $result) {
   if(strpos($result->{'feature'},'名詞') !== false
-    && mb_strlen($result->{'surface'}, 'UTF-8') != 1
+    && mb_strlen($result->{'surface'}, 'UTF-8') !== 1
     && strpos($result->{'feature'},'数') === false)
     {$words[] = $result->{'surface'};}
 }
@@ -26,7 +26,8 @@ foreach ($results as $result) {
         <h1>フォロワーキーワード検索アプリ</h1>
     </header>
     <div class="container">
-      <p>フォロワーのプロフィールによく含まれる単語BEST50</p>
+      <a href="analysis.php">キーワード検索画面に戻る</a>
+      <p>フォロワーのプロフィールによく含まれる単語ランキング</p>
         <table>
           <tr>
             <th>単語</th>
@@ -41,7 +42,7 @@ foreach ($results as $result) {
               <td><?= $word ?></td>
               <td><?= $count ?></td>
             </tr>
-            <?php $i++; ?>
+            <?php ++$i; ?>
           <?php endforeach; ?>
         </table>
         <a href="analysis.php">キーワード検索画面に戻る</a>
