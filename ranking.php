@@ -33,16 +33,11 @@ foreach ($results as $result) {
             <th>単語</th>
             <th>数</th>
           </tr>
-          <?php $i = 1; ?>
          <?php foreach ($counts as $word => $count) : ?>
-           <?php if( $i>=50 ){
-             break;
-           } ?>
             <tr>
               <td><?= $word ?></td>
               <td><?= $count ?></td>
             </tr>
-            <?php ++$i; ?>
           <?php endforeach; ?>
         </table>
         <a href="analysis.php">キーワード検索画面に戻る</a>
