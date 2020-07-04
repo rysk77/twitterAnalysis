@@ -30,7 +30,7 @@ class WordDic {
 
 	public function searchFromTrieId($trieId, $start, $wordLength, $isSpace, $fn) {
 		$end = $this->indices[$trieId + 1];
-		for ($i = $this->indices[$trieId]; $i < $end; $i++) {
+		foreach ((array)$this->indices[$trieId] as $i) {
 			$fn->call(new ViterbiNode($i, $start, $wordLength, $this->costs->get($i), $this->leftIds->get($i), $this->rightIds->get($i), $isSpace));
 		}
 	}
@@ -50,8 +50,7 @@ class WordDicCallbackCaller {
 	}
 
 	public function call($start, $offset, $trieId) {
-		$end = $this->wd->indices[$trieId + 1];
-		for ($i = $this->wd->indices[$trieId]; $i < $end; $i++) {
+		foreach ((array)$this->wd->indices[$trieId] as $i) {
 			$this->fn->call(new ViterbiNode($i, $start, $offset, $this->wd->costs->get($i), $this->wd->leftIds->get($i), $this->wd->rightIds->get($i), false));
 		}
 	}
