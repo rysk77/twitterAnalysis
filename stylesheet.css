@@ -74,12 +74,11 @@ footer{
       font-size: 16px;
     }
     .login{
-      width: 80vw;
+      min-width:80%;
     }
     #form{
       width: 90vw;
     }
-
     table{
       width: 100vw;
     }
@@ -89,5 +88,4 @@ footer{
     .count{
       width: 40vw;
     }
-
 }
