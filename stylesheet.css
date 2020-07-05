@@ -74,22 +74,20 @@ footer{
       font-size: 16px;
     }
     .login{
-      width: 80%;
-      margin: auto 0;
+      width: 80vw;
     }
     #form{
-      width: 90%;
+      width: 90vw;
     }
 
     table{
-      width: 100%;
-      margin: auto 0;
+      width: 100vw;
     }
     .word{
-      width: 40%;
+      width: 40vw;
     }
     .count{
-      width: 40%;
+      width: 40vw;
     }
 
 }
