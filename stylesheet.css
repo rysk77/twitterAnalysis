@@ -68,3 +68,17 @@ footer{
 .btn {
   background-color: #7FB6F5;
 }
+
+@media screen and (max-width: 480px) {
+    #form{
+      width: 90%;
+    }
+
+    tablr{
+      font-size: 18px;
+    }
+
+    .ranking{
+      width 80%;
+    }
+}

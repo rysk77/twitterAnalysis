@@ -39,7 +39,7 @@ foreach ($results as $result) {
               <td><?= $count ?></td>
             </tr>
           <?php endforeach; ?>
-        </table>
+        </table class="ranking">
         <a href="analysis.php">キーワード検索画面に戻る</a>
     </div>
   <footer><p>Copyright (C) 2020 FukaFuka. all rights reserved.</p></footer>
