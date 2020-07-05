@@ -75,6 +75,7 @@ footer{
     }
     .login{
       width: 80%;
+      margin: auto 0;
     }
     #form{
       width: 90%;
@@ -82,6 +83,7 @@ footer{
 
     table{
       width: 100%;
+      margin: auto 0;
     }
     .word{
       width: 40%;
