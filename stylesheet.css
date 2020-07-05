@@ -70,15 +70,24 @@ footer{
 }
 
 @media screen and (max-width: 480px) {
+    .container{
+      font-size: 16px;
+    }
+    .btn{
+      width: 80%;
+    }
     #form{
       width: 90%;
     }
 
-    tablr{
-      font-size: 18px;
+    table{
+      width: 100%;
+    }
+    .word{
+      width: 40%;
+    }
+    .count{
+      width: 40%;
     }
 
-    .ranking{
-      width 80%;
-    }
 }

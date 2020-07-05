@@ -30,8 +30,8 @@ foreach ($results as $result) {
       <p>フォロワーのプロフィールによく含まれる単語ランキング</p>
         <table>
           <tr>
-            <th>単語</th>
-            <th>数</th>
+            <th class="word">単語</th>
+            <th class="count">数</th>
           </tr>
          <?php foreach ($counts as $word => $count) : ?>
             <tr>
