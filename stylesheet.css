@@ -73,22 +73,19 @@ footer{
       font-size: 16px;
     }
     .login{
-      min-width:80%;
+      min-width:250px;
     }
     #form{
-      width: 90%;
+      width: 300px;
     }
 
     table{
       width: 100%;
-
+    }
     .word{
       width: 40%;
     }
     .count{
       width: 40%;
-    }
-    select{
-      width: 80%;
     }
 }
