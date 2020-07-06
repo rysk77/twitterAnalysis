@@ -68,8 +68,7 @@ footer{
 .btn {
   background-color: #7FB6F5;
 }
-
-@media screen and (max-width: 670px) {
+@media all and (max-width: 670px){
     .container{
       font-size: 16px;
     }
@@ -77,15 +76,19 @@ footer{
       min-width:80%;
     }
     #form{
-      width: 90vw;
+      width: 90%;
     }
+
     table{
-      width: 100vw;
-    }
+      width: 100%;
+
     .word{
-      width: 40vw;
+      width: 40%;
     }
     .count{
-      width: 40vw;
+      width: 40%;
+    }
+    select{
+      width: 80%;
     }
 }
