@@ -68,17 +68,20 @@ footer{
 .btn {
   background-color: #7FB6F5;
 }
-@media all and (max-width: 670px){
+@media screen and (max-width: 670px){
     .container{
       font-size: 16px;
     }
-    .login{
-      min-width:250px;
+    .btn{
+      width:250px;
     }
     #form{
+      width: 100%;
+    }
+    .search
+    select{
       width: 300px;
     }
-
     table{
       width: 100%;
     }
