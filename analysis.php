@@ -66,7 +66,7 @@
      <div class="container">
        <h3>キーワード検索</h3>
        <form  action="analysis.php" method="post" id="form">
-         <input type="text" name="keyword" >
+         <input class="search" type="text" name="keyword" >
          <input class="submit" type="submit" name="submit" value="検索">
          <p>検索条件</p>
          <select  name="target">

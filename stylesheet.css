@@ -72,14 +72,18 @@ footer{
     .container{
       font-size: 16px;
     }
-    .btn{
+    .login{
+      display: block;
       width:250px;
     }
     #form{
       width: 100%;
     }
-    .search
+    .search{
+      display: inline-block;
+    }
     select{
+      display: block;
       width: 300px;
     }
     table{
