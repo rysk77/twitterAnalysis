@@ -66,7 +66,7 @@ footer{
   width: 100%;
 }
 
-@media screen and (max-width: 670px){
+@media (max-width: 670px){
   /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -131,7 +131,7 @@ table {
     }
     select{
       display: block;
-      width: 300px;
+      width: 80%;
     }
     table{
       width: 100%;
