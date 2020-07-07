@@ -98,7 +98,7 @@ footer{
     table{
       width: 100%;
     }
-    th{
+    th .name{
       text-align: center;
     }
     .ranking{
@@ -111,8 +111,7 @@ footer{
       width: 50%;
     }
     footer{
-      font-size: 12px;
+      font-size: 10px;
       height: 25px;
-
     }
 }
