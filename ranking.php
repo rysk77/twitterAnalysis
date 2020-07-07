@@ -29,7 +29,7 @@ foreach ($results as $result) {
     <div class="container">
       <a href="analysis.php">キーワード検索画面に戻る</a>
       <p>フォロワーのプロフィールによく含まれる単語ランキング</p>
-        <table>
+        <table class="ranking">
           <tr>
             <th class="word">単語</th>
             <th class="count">数</th>
@@ -40,7 +40,7 @@ foreach ($results as $result) {
               <td><?= $count ?></td>
             </tr>
           <?php endforeach; ?>
-        </table class="ranking">
+        </table >
         <a href="analysis.php">キーワード検索画面に戻る</a>
     </div>
   <footer><p>Copyright (C) 2020 FukaFuka. all rights reserved.</p></footer>

@@ -14,7 +14,6 @@ header{
 }
 
 a {
-  display: block;
   text-decoration: none;
 }
 .container{
@@ -67,12 +66,16 @@ footer{
 }
 
 @media (max-width: 670px){
+    header{
+      font-size: 18px;
+    }
     .container{
-      font-size: 16px;
+      font-size: 14px;
     }
     .login{
       display: block;
-      width:250px;
+      width: 70%;
+      margin: 0 auto;
     }
     #form{
       display: block;
@@ -84,14 +87,21 @@ footer{
     select{
       display: block;
       width: 80%;
+      margin: 0 auto;
     }
     table{
       width: 100%;
     }
+    .ranking{
+      width: 80%;
+    }
     .word{
-      width: 40%;
+      width: 50%;
     }
     .count{
-      width: 40%;
+      width: 50%;
+    }
+    footer{
+      font-size: 12px;
     }
 }
