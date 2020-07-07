@@ -67,16 +67,15 @@ footer{
 
 @media (max-width: 670px){
     header{
-      font-size: 14px;
       height: 50px;
+    }
+    h1{
+      font-size: 14px;
     }
     .container{
       font-size: 13px;
       top: 50px;
       margin: 15px auto;
-    }
-    p{
-      width: 90%;
     }
     .login{
       display: block;
@@ -93,11 +92,14 @@ footer{
     }
     select{
       display: block;
-      width: 80%;
+      width: 60%;
       margin: 0 auto;
     }
     table{
       width: 100%;
+    }
+    th{
+      text-align: center;
     }
     .ranking{
       width: 80%;
