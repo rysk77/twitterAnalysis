@@ -29,6 +29,11 @@ $oauthUrl = $connection->url('oauth/authorize', array('oauth_token' => $request_
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@SoHammeredLion" />
+  <meta property="og:url" content="https://follwerkeywordsearch.herokuapp.com/" />
+  <meta property="og:title" content="フォロワーキーワード検索アプリ" />
+  <meta property="og:description" content="検索したキーワードが名前やプロフィールに含まれるフォロワー一覧を表示します" />
 	<title>login</title>
 	<meta name="robots" content="noindex, nofollow">
   <link rel="stylesheet" href="stylesheet.css">
